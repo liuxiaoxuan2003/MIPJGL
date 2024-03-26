@@ -1,5 +1,5 @@
 rm(list = ls(all = TRUE))
-source('E:\\haimianbaobao\\文件\\大创\\IPJGL-main\\IPJGL-main\\source.scripts.R')
+source('E:/haimianbaobao/文件/大创/MIPJGL/source.scripts.R')
 
 data <- generate.data(
   n1,
@@ -10,7 +10,7 @@ data <- generate.data(
   m.pert,
   umin = 0.3,
   umax = 0.8,
-  diffmode
+  diffmode = 3,
 )
 delta.true <- data$delta.true
 
