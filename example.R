@@ -1,5 +1,5 @@
 rm(list = ls(all = TRUE))
-source('E:/haimianbaobao/文件/大创/MIPJGL/source.scripts.R')
+source('source.scripts.R')
 
 data <- generate.data(
   n1,
