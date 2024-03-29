@@ -1,4 +1,4 @@
-showmatrix <- function(theta, thresh = 1e-5, main) {
+showmatrix <- function(theta, thresh = 1e-5, main, save_path) {
   library('pheatmap')
   theta <- theta - diag(diag(theta))
   range <- seq(-max(abs(theta)), max(abs(theta)), length.out = 100)
@@ -9,7 +9,9 @@ showmatrix <- function(theta, thresh = 1e-5, main) {
     breaks = range,
     cluster_rows = FALSE,
     cluster_cols = FALSE,
-    main = main
+    main = main,
+    filename = save_path
   )
+  
   return(p)
 }

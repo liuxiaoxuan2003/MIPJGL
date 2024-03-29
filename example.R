@@ -33,12 +33,13 @@ for (i in 2: T){
 p_true_arr <- list()
 p_pred_arr <- list()
 for (i in 2: T){
-    p_true_arr[[i]] = showmatrix(keep.largest.N(delta_true_arr[[i]], keep.edges), main = 'truth')
-    p_pred_arr[[i]] = showmatrix(keep.largest.N(delta_pre_arr[[i]], keep.edges), main = 'MIPJGL')
+    save_true_path = sprintf("./fig/delta_true%d-%d.pdf", i-1, i)
+    save_pred_path = sprintf("./fig/delta_pred%d-%d.pdf", i-1, i)
+    p_true_arr[[i]] = showmatrix(keep.largest.N(delta_true_arr[[i]], keep.edges), main = 'truth', save_path=save_true_path)
+    p_pred_arr[[i]] = showmatrix(keep.largest.N(delta_pre_arr[[i]], keep.edges), main = 'MIPJGL', save_path=save_pred_path)
 }
 
-
-
+# 
 # delta.IPJGL <- list()
 # print(length(results.IPJGL$Z_arr))
 # # 循环遍历相邻的两个部分
