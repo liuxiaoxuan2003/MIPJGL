@@ -82,7 +82,7 @@ IPJGL <- function(
                             normtype)
                 }
                 else if (i == T){
-                    theta_arr[[i]] = solve.theta((n * sigma_arr[[i]] - F_arr[[i - 1]] + Q_arr[[i - 1]]) - rho * (theta_arr[[i - 1]] - (V_arr[[i - 1]] + W_arr[[i - 1]]) + Z_arr[[i]]),
+                    theta_arr[[i]] = solve.theta((n * sigma_arr[[i]] - F_arr[[i - 1]] + Q_arr[[i]]) - rho * (theta_arr[[i - 1]] - (V_arr[[i - 1]] + W_arr[[i - 1]]) + Z_arr[[i]]),
                         V_arr[[i - 1]],
                         rho,
                         n,
@@ -90,7 +90,7 @@ IPJGL <- function(
                         normtype)
                 }
                 else{
-                    theta_arr[[i]] = solve.theta1((n * sigma_arr[[i]] + F_arr[[i]] - F_arr[[i - 1]] + Q_arr[[i]] - Q_arr[[i - 1]]) - rho * (theta_arr[[i - 1]] + theta_arr[[i + 1]] + (V_arr[[i]] + W_arr[[i]]) - (V_arr[[i - 1]] + W_arr[[i - 1]]) + Z_arr[[i]]),
+                    theta_arr[[i]] = solve.theta1((n * sigma_arr[[i]] + F_arr[[i]] - F_arr[[i - 1]] + Q_arr[[i]]) - rho * (theta_arr[[i - 1]] + theta_arr[[i + 1]] + (V_arr[[i]] + W_arr[[i]]) - (V_arr[[i - 1]] + W_arr[[i - 1]]) + Z_arr[[i]]),
                         V_arr[[i - 1]],
                         V_arr[[i]],
                         rho,
