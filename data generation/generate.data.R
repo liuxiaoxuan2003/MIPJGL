@@ -139,7 +139,7 @@ generate.data <-
             X_arr[[2]] = X2
             theta_arr[[1]] = theta_init
             theta_arr[[2]] = theta_now
-            delta_arr[[1]] = delta.true
+            delta_arr[[2]] = delta.true
             sigma_arr[[1]] = sigma1
             sigma_arr[[2]] = sigma2
             index.pert_arr[[1]] = index.pert
