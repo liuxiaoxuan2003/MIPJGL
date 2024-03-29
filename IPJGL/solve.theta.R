@@ -1,10 +1,8 @@
-solve.theta1 <- function(A, V1, V2, rho, n, lambda2, normtype)
+solve.theta1 <- function(A, V_pre, V_now, rho, n, lambda2, normtype)
 {
   source('./IPJGL/Dnorm.R')
-  # print('lambda2:')
-  # print(lambda2)
-  p <- length(V1[1, ])
-  B <- 2 * lambda2 * Dnorm(V1, normtype) + 2 * lambda2 * Dnorm(V2, normtype) + 3 * rho * diag(p)
+  p <- length(V_pre[1, ])
+  B <- 2 * lambda2 * (Dnorm(V_pre, normtype) + Dnorm(V_now, normtype)) + 3 * rho * diag(p)
 
   iB <- solve(B)
   C <- A %*% iB
@@ -17,6 +15,7 @@ solve.theta1 <- function(A, V1, V2, rho, n, lambda2, normtype)
   theta <- 0.5 * U %*% diag(D) %*% t(U)
   return(theta)
 }
+
 
 
 solve.theta <- function(A, V, rho, n, lambda2, normtype)
