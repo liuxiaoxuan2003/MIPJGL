@@ -18,7 +18,7 @@ generate.data <-
     diag(net.structure) <- 0
 
 
-
+   
     dense = matrix(runif(p * p), p)
     dense = (dense - 0.5) / 0.5 * (umax - umin) + umin * sign(dense - 0.5)
     dense[upper.tri(dense)] <- 0

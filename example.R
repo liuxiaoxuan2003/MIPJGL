@@ -1,6 +1,7 @@
 rm(list = ls(all = TRUE))
 source('source.scripts.R')
 
+
 data <- generate.data(
   n1,
   n2,
@@ -12,6 +13,7 @@ data <- generate.data(
   umax = 0.8,
   diffmode = 5,
 )
+
 delta_true_arr <- data$delta_arr
 print(length(data$delta_arr))
 ##### IPJGL #####

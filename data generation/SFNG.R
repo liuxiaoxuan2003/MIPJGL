@@ -4,7 +4,6 @@ SFNG <- function(Nodes, mlinks, begin) {
   Net <- matrix(0, Nodes, Nodes)
   Net[1:pos, 1:pos] <- begin
   sumlinks <- sum(Net)
-  
   while (pos < Nodes) {
     pos <- pos + 1
     linkage <- 0
