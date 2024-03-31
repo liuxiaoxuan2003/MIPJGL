@@ -1,4 +1,4 @@
-IPJGL <- function(
+TVIPJGL <- function(
     data,
     lambda1 = 4.6,
     lambda2 = 5.2,
@@ -6,10 +6,10 @@ IPJGL <- function(
     step.max = 1e2,
     truncate = 1e-5,
     normtype = '2'){
-    source('./IPJGL/soft.tau1.R')
-    source('./IPJGL/soft.tauV.R')
-    source('./IPJGL/solve.theta.R')
-    source('./IPJGL/Dnorm.R')
+    source('./TVIPJGL/soft.tau1.R')
+    source('./TVIPJGL/soft.tauV.R')
+    source('./TVIPJGL/solve.theta.R')
+    source('./TVIPJGL/Dnorm.R')
     library('progress')
     # 初始化存储每次迭代结果的列表
     theta_arr <- list()
@@ -166,7 +166,7 @@ IPJGL <- function(
         )
     )
 }
-# IPJGL <- function(
+# TVIPJGL <- function(
 #     data,
 #     lambda1 = 4.6,
 #     lambda2 = 5.2,
@@ -174,10 +174,10 @@ IPJGL <- function(
 #     step.max = 1e2,
 #     truncate = 1e-5,
 #     normtype = '2'){
-#     source('./IPJGL/soft.tau1.R')
-#     source('./IPJGL/soft.tauV.R')
-#     source('./IPJGL/solve.theta.R')
-#     source('./IPJGL/Dnorm.R')
+#     source('./TVIPJGL/soft.tau1.R')
+#     source('./TVIPJGL/soft.tauV.R')
+#     source('./TVIPJGL/solve.theta.R')
+#     source('./TVIPJGL/Dnorm.R')
 #     library('progress')
 #     # 初始化存储每次迭代结果的列表
 #     theta_arr <- list()

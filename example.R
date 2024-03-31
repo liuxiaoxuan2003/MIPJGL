@@ -16,14 +16,14 @@ data <- generate.data(
 
 delta_true_arr <- data$delta_arr
 print(length(data$delta_arr))
-##### IPJGL #####
-results.IPJGL <-
-  IPJGL(
+##### TVIPJGL #####
+results.TVIPJGL <-
+  TVIPJGL(
     data = data
   )
-theta_pre_arr = results.IPJGL$theta_arr
-Z_pre_arr = results.IPJGL$Z_arr
-V_pre_arr = results.IPJGL$V_arr
+theta_pre_arr = results.TVIPJGL$theta_arr
+Z_pre_arr = results.TVIPJGL$Z_arr
+V_pre_arr = results.TVIPJGL$V_arr
 
 keep.edges <- p
 
@@ -38,22 +38,22 @@ for (i in 2: T){
     save_true_path = sprintf("./fig/delta_true%d-%d.pdf", i-1, i)
     save_pred_path = sprintf("./fig/delta_pred%d-%d.pdf", i-1, i)
     p_true_arr[[i]] = showmatrix(keep.largest.N(delta_true_arr[[i]], keep.edges), main = 'truth', save_path=save_true_path)
-    p_pred_arr[[i]] = showmatrix(keep.largest.N(delta_pre_arr[[i]], keep.edges), main = 'MIPJGL', save_path=save_pred_path)
+    p_pred_arr[[i]] = showmatrix(keep.largest.N(delta_pre_arr[[i]], keep.edges), main = 'MTVIPJGL', save_path=save_pred_path)
 }
 
 # 
-# delta.IPJGL <- list()
-# print(length(results.IPJGL$Z_arr))
+# delta.TVIPJGL <- list()
+# print(length(results.TVIPJGL$Z_arr))
 # # 循环遍历相邻的两个部分
 # for (i in 2: T ) {
-#   Z1 <- results.IPJGL$Z_arr[[i-1]]  
-#   Z2 <- results.IPJGL$Z_arr[[i]]
+#   Z1 <- results.TVIPJGL$Z_arr[[i-1]]  
+#   Z2 <- results.TVIPJGL$Z_arr[[i]]
   
 #   # 计算theta2partial
 #   delta <- theta2partial(Z1) - theta2partial(Z2)
   
-#   # 将计算结果附加到delta.IPJGL中
-#   delta.IPJGL[[i]] <- delta
+#   # 将计算结果附加到delta.TVIPJGL中
+#   delta.TVIPJGL[[i]] <- delta
 # }
 
 
@@ -75,14 +75,14 @@ for (i in 2: T){
 # )
 # delta.true <- data$delta.true
 
-# ##### IPJGL #####
-# results.IPJGL <-
-#   IPJGL(
+# ##### TVIPJGL #####
+# results.TVIPJGL <-
+#   TVIPJGL(
 #     data = data
 #   )
-# delta.IPJGL <- theta2partial(results.IPJGL$Z1)-theta2partial(results.IPJGL$Z2)
+# delta.TVIPJGL <- theta2partial(results.TVIPJGL$Z1)-theta2partial(results.TVIPJGL$Z2)
 
 # keep.edges <- p
 # p1 <- showmatrix(keep.largest.N(delta.true,keep.edges),main = 'truth')
-# p2 <- showmatrix(keep.largest.N(delta.IPJGL,keep.edges),main = 'IPJGL')
+# p2 <- showmatrix(keep.largest.N(delta.TVIPJGL,keep.edges),main = 'TVIPJGL')
 

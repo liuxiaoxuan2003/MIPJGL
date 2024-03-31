@@ -4,7 +4,7 @@ theta2partial <- function(theta) {
   diag(partial)<-1
   return(partial)
 }
-# t = results.IPJGL$Z_arr[[i-1]]
+# t = results.TVIPJGL$Z_arr[[i-1]]
 # d <- solve(sqrt(diag(diag(t))))
 # partial <- -d %*% t %*% d
 # diag(partial)<-1
